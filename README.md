@@ -1,47 +1,3 @@
-# 使用注册脚本 即可Token无忧
-
-# 使用注册脚本 即可Token无忧
-
-# 使用注册脚本 即可Token无忧
-
-
-
-#  ChatGPT免费额度+CLIProxyAPIPlus 完整部署
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sLjTilvm2RQ/0.jpg)]
-
-```
-# openai_register.py
-```
-# 调用GPT-5.3高级模型！ChatGPT免费额度+CLIProxyAPIPlus 完整部署视频教程
-
-# 完整部署视频教程
-
-```
-****** openai_register.py 
-```
----
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sLjTilvm2RQ/0.jpg)](https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s)
----
-
-### CLIProxyAPI 深度实战：解锁 AI 算力新姿势 
-
-# 深度实战：解锁 AI 算力新姿势视频教程
-
----
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JVcUJoWbsLs/0.jpg)](https://www.youtube.com/watch?v=JVcUJoWbsLs)
-
----
-```
-
-```
-```
-https://github.com/router-for-me/CLIProxyAPIPlus/blob/main/README_CN.md
-```
-```
-https://help.router-for.me/cn/configuration/basic.html
-```
-
 ### 使用无限注册脚本:openai_register.py 即可Token无忧。
 
 # 使用教程：
@@ -78,6 +34,9 @@ https://help.router-for.me/cn/configuration/basic.html
     *   例如：CherryStudio、OneAPI、LobeChat、ChatGPT Next Web、各类浏览器插件等。
 
 ---
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sLjTilvm2RQ/0.jpg)]
+---
+
 
 ## 二、详细部署步骤
 
@@ -119,7 +78,7 @@ https://help.router-for.me/cn/configuration/basic.html
     *   输入刚才设置的 `screen_key` 即可登录。
 
 ---
-
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sLjTilvm2RQ/0.jpg)](https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s)
 ### 步骤 2：批量生成 GitHub Token（在本地电脑上）
 
 1.  **获取注册脚本**：
@@ -150,7 +109,7 @@ https://help.router-for.me/cn/configuration/basic.html
     *   点击“新增”或复制一个已有的密钥，**保存此密钥**。后续调用 API 时需使用它。
 
 ---
-
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JVcUJoWbsLs/0.jpg)](https://www.youtube.com/watch?v=JVcUJoWbsLs)
 ### 步骤 4：在客户端配置并使用
 
 1.  打开你支持的客户端（如 **CherryStudio**）。
