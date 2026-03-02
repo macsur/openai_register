@@ -1,4 +1,4 @@
-# 使用脚本 Token无忧。
+# 使用脚本 - Token无忧
 
 # 流程图
 ```mermaid
