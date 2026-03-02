@@ -1,7 +1,5 @@
 # 使用无限注册脚本:openai_register.py 即可Token无忧。
 ## 总结流程图
----
-
 ```mermaid
 graph LR
     A[本地运行注册脚本] --> B[批量生成 GitHub Token 文件]
@@ -9,6 +7,7 @@ graph LR
     C --> D[配置 API 密钥]
     D --> E[客户端配置: BaseURL + API Key]
     E --> F[免费调用 o1/gpt-4o/o3 等高级模型]
+```
 
 
 ---
