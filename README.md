@@ -1,5 +1,6 @@
 # 使用无限注册脚本:openai_register.py 即可Token无忧。
 ## 总结流程图
+---
 
 ```mermaid
 graph LR
