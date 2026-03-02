@@ -1,17 +1,7 @@
-### 使用无限注册脚本:openai_register.py 即可Token无忧。
-
-# 使用教程：
-
-# 使用教程：
-
-# 使用教程：
-
-# 使用教程：
-
-# 使用教程：
+# 使用无限注册脚本:openai_register.py 即可Token无忧。
 
 
-# 教程：免费无限使用 GPT-4o、o1 等高级模型
+## 教程：免费无限使用 GPT-4o、o1 等高级模型
 
 > **核心方案：** 利用 GitHub Copilot 免费额度 + `CLIProxyAPI` 代理 + 自动化注册脚本
 > **目标模型：** GPT-4o, o1-preview, o1, o3-mini 等 GitHub Copilot 内的高级模型
