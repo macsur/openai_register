@@ -1,7 +1,7 @@
 # 使用注册脚本 即可Token无忧
 
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sLjTilvm2RQ/600.jpg)](https://www.youtube.com/watch?v=sLjTilvm2RQ)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sLjTilvm2RQ/0.jpg)]
 
 ```
 # openai_register.py
