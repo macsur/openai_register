@@ -135,4 +135,58 @@ graph LR
 4.  **用途限制**：仅供**个人学习与研究**。请遵守 GitHub 和 OpenAI 的服务条款，**严禁用于商业或高负载生产环境**。
 
 ---
+=======================================================================
+# 🚀 免费无限使用 GPT-4o / o1 / o3 高级模型
+
+### 完整部署教程：CLIProxyAPI + 自动注册脚本实战
+
+**适用对象：** 零基础用户 ｜ **预计耗时：** 30-60 分钟 ｜ **难度：** ⭐⭐☆☆☆
+
+---
+
+## 🎬 视频教程
+
+> 点击缩略图将在 **新窗口** 中打开 YouTube 播放。
+
+### 📺 视频一：免费无限使用 GPT！ChatGPT 白嫖方案全教程
+
+<a href="https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s" target="_blank">
+  <img src="https://img.youtube.com/vi/sLjTilvm2RQ/0.jpg" alt="免费无限使用GPT！ChatGPT白嫖方案全教程" width="560">
+</a>
+
+### 📺 视频二：补充教程与进阶配置
+
+<a href="https://www.youtube.com/watch?v=JVcUJoWbsLs" target="_blank">
+  <img src="https://img.youtube.com/vi/JVcUJoWbsLs/0.jpg" alt="补充教程与进阶配置" width="560">
+</a>
+
+---
+
+## 📖 目录
+
+1. [原理概述](#1-原理概述)
+2. [前置准备](#2-前置准备)
+3. [第一阶段：购买与连接云服务器](#3-第一阶段购买与连接云服务器)
+4. [第二阶段：部署 CLIProxyAPI 代理服务](#4-第二阶段部署-cliproxyapi-代理服务)
+5. [第三阶段：批量注册 GitHub 账号并生成 Token](#5-第三阶段批量注册-github-账号并生成-token)
+6. [第四阶段：上传 Token 并配置 API](#6-第四阶段上传-token-并配置-api)
+7. [第五阶段：在客户端中接入使用](#7-第五阶段在客户端中接入使用)
+8. [常见问题排查（FAQ）](#8-常见问题排查faq)
+9. [安全加固建议](#9-安全加固建议)
+10. [免责声明](#10-免责声明)
+
+---
+
+## 1. 原理概述
+
+### 🔑 核心逻辑
+
+| 步骤 | 说明 |
+|:---:|:---|
+| **① 免费额度** | GitHub 为所有注册账号提供 Copilot 免费 API 调用额度（含高级模型） |
+| **② 批量注册** | 通过 Python 脚本 + 临时邮箱，自动批量注册 GitHub 账号，生成大量 Token |
+| **③ API 代理** | 部署 CLIProxyAPI 服务，批量导入 Token，自动轮询调用 |
+| **④ 标准接口** | CLIProxyAPI 对外提供标准 OpenAI API 格式，兼容所有主流 AI 客户端 |
+
+### 整体架构
 
