@@ -1,4 +1,14 @@
 # 使用无限注册脚本:openai_register.py 即可Token无忧。
+## 总结流程图
+
+```mermaid
+graph LR
+    A[本地运行注册脚本] --> B[批量生成 GitHub Token 文件]
+    B --> C[上传 Token 到 CLIProxyAPI]
+    C --> D[配置 API 密钥]
+    D --> E[客户端配置: BaseURL + API Key]
+    E --> F[免费调用 o1/gpt-4o/o3 等高级模型]
+
 
 
 ## 教程：免费无限使用 GPT-4o、o1 等高级模型
@@ -124,14 +134,4 @@
 4.  **用途限制**：仅供**个人学习与研究**。请遵守 GitHub 和 OpenAI 的服务条款，**严禁用于商业或高负载生产环境**。
 
 ---
-
-## 四、总结流程图
-
-```mermaid
-graph LR
-    A[本地运行注册脚本] --> B[批量生成 GitHub Token 文件]
-    B --> C[上传 Token 到 CLIProxyAPI]
-    C --> D[配置 API 密钥]
-    D --> E[客户端配置: BaseURL + API Key]
-    E --> F[免费调用 o1/gpt-4o/o3 等高级模型]
 
