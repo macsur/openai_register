@@ -1,4 +1,6 @@
-### openai_register
+# 使用注册脚本 即可Token无忧
+
+# openai_register
 # 调用GPT-5.3高级模型！ChatGPT免费额度+CLIProxyAPIPlus 完整部署
 
 ```
@@ -23,4 +25,4 @@ https://github.com/router-for-me/CLIProxyAPIPlus/blob/main/README_CN.md
 https://help.router-for.me/cn/configuration/basic.html
 ```
 
-### 无限注册脚本:openai_register.py
+### 使用无限注册脚本:openai_register.py 即可Token无忧。
