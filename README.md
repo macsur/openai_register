@@ -20,4 +20,4 @@ https://github.com/router-for-me/CLIProxyAPIPlus/blob/main/README_CN.md
 https://help.router-for.me/cn/configuration/basic.html
 ```
 
-无限注册脚本
+### 无限注册脚本:openai_register.py
