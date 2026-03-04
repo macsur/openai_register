@@ -10,7 +10,7 @@ graph LR
     E --> F[免费调用 o1/gpt-4o/o3 等高级模型]
 ```
 
-
+![截图](https://raw.githubusercontent.com/macsur/openai_register/main/2026-03-04_135204.png)
 ---
 ## 教程：免费无限使用 GPT-4o、o1 等高级模型
 
