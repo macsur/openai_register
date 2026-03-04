@@ -286,18 +286,10 @@ docker compose up -d
 
 ## 🎬 参考视频
 
-- 教程视频 1（含时间定位）  
-  https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s
+<a href="https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s" target="_blank" rel="noopener noreferrer">
+  教程视频 1（建议新标签打开）
+</a>
 
-- 教程视频 1（从头开始）  
-  https://www.youtube.com/watch?v=sLjTilvm2RQ
-
-- 教程视频 2（补充）  
-  https://www.youtube.com/watch?v=JVcUJoWbsLs
-
-[![Video 1 - Watch on YouTube](https://img.youtube.com/vi/sLjTilvm2RQ/hqdefault.jpg)](https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s)
-
-[![Video 2 - Watch on YouTube](https://img.youtube.com/vi/JVcUJoWbsLs/hqdefault.jpg)](https://www.youtube.com/watch?v=JVcUJoWbsLs)
 
 ---
 
