@@ -2,6 +2,27 @@
 
 > ✨ 面向：希望快速部署 OpenAI 兼容代理，并接入 Chatbox / 代码客户端的同学  
 > ✅ 特性：目录跳转、折叠块 `<details>`、可直接复制命令块、FAQ 锚点**
+> ---
+
+<a id="video"></a>
+
+## 🎬 参考视频
+
+- 教程视频 1（含时间定位）  
+  https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s
+
+- 教程视频 1（从头开始）  
+  https://www.youtube.com/watch?v=sLjTilvm2RQ
+
+- 教程视频 2（补充）  
+  https://www.youtube.com/watch?v=JVcUJoWbsLs
+
+[![Video 1 - Watch on YouTube](https://img.youtube.com/vi/sLjTilvm2RQ/hqdefault.jpg)](https://www.youtube.com/watch?v=sLjTilvm2RQ&t=634s)
+
+[![Video 2 - Watch on YouTube](https://img.youtube.com/vi/JVcUJoWbsLs/hqdefault.jpg)](https://www.youtube.com/watch?v=JVcUJoWbsLs)
+
+---
+
 
 ![截图](https://raw.githubusercontent.com/macsur/openai_register/main/2026-03-04_135204.png)
 
