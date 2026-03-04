@@ -1,4 +1,4 @@
-**# 🚀 openai_register 部署指南（GitHub README 优化版）
+# 🚀 openai_register 部署指南（GitHub README 优化版）
 
 > ✨ 面向：希望快速部署 OpenAI 兼容代理，并接入 Chatbox / 代码客户端的同学  
 > ✅ 特性：目录跳转、折叠块 `<details>`、可直接复制命令块、FAQ 锚点**
