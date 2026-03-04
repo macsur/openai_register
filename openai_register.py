@@ -23,6 +23,20 @@ import urllib.error
 from curl_cffi import requests
 
 # ==========================================
+# 辅助函数：随机身份生成
+# ==========================================
+
+FIRST_NAMES = ["James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Thomas", "Charles", "Christopher", "Daniel", "Matthew", "Anthony", "Mark", "Donald", "Steven", "Paul", "Andrew", "Joshua", "Sarah", "Jessica", "Susan", "Emily", "Lisa"]
+LAST_NAMES = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin"]
+
+def get_random_account_info() -> str:
+    name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
+    year = random.randint(1980, 2004)
+    month = random.randint(1, 12)
+    day = random.randint(1, 28)
+    return json.dumps({"name": name, "birthdate": f"{year}-{month:02d}-{day:02d}"})
+
+# ==========================================
 # Mail.tm 临时邮箱 API
 # ==========================================
 
@@ -184,8 +198,8 @@ def get_oai_code(token: str, email: str, proxies: Any = None) -> str:
                 if m:
                     print(" 抓到啦! 验证码:", m.group(1))
                     return m.group(1)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f" [Warn] 邮箱轮询异常: {type(e).__name__} - {e}")
 
         time.sleep(3)
 
@@ -423,23 +437,43 @@ def submit_callback_url(
 # ==========================================
 
 
+def check_ip_location(s: requests.Session) -> bool:
+    try:
+        trace = s.get("https://cloudflare.com/cdn-cgi/trace", timeout=10)
+        trace_text = trace.text
+        loc_re = re.search(r"^loc=(.+)$", trace_text, re.MULTILINE)
+        loc = loc_re.group(1) if loc_re else None
+        print(f"[*] 当前 IP 所在地: {loc}")
+        if loc in ("CN", "HK", "RU", "KP", "IR"):
+            print("[Error] 检查代理哦w - 所在地不支持")
+            return False
+        return True
+    except Exception as e:
+        print(f"[Error] 网络连接检查失败: {e}")
+        return False
+
+def get_sentinel_version(s: requests.Session) -> str:
+    try:
+        resp = s.get("https://sentinel.openai.com/backend-api/sentinel/frame.html", timeout=10)
+        m = re.search(r'sv=([a-z0-9]+)', resp.url)
+        if m:
+            return m.group(1)
+        m = re.search(r'sv=([a-z0-9]+)', resp.text)
+        if m:
+            return m.group(1)
+        return "20260219f9f6"
+    except Exception as e:
+        print(f"[Warn] 无法自动获取 Sentinel 版本，将使用默认值: {e}")
+        return "20260219f9f6"
+
 def run(proxy: Optional[str]) -> Optional[str]:
     proxies: Any = None
     if proxy:
         proxies = {"http": proxy, "https": proxy}
 
-    s = requests.Session(proxies=proxies, impersonate="chrome")
+    s = requests.Session(proxies=proxies, impersonate="chrome120")
 
-    try:
-        trace = s.get("https://cloudflare.com/cdn-cgi/trace", timeout=10)
-        trace = trace.text
-        loc_re = re.search(r"^loc=(.+)$", trace, re.MULTILINE)
-        loc = loc_re.group(1) if loc_re else None
-        print(f"[*] 当前 IP 所在地: {loc}")
-        if loc == "CN" or loc == "HK":
-            raise RuntimeError("检查代理哦w - 所在地不支持")
-    except Exception as e:
-        print(f"[Error] 网络连接检查失败: {e}")
+    if not check_ip_location(s):
         return None
 
     email, dev_token = get_email_and_token(proxies)
@@ -453,29 +487,40 @@ def run(proxy: Optional[str]) -> Optional[str]:
     try:
         resp = s.get(url, timeout=15)
         did = s.cookies.get("oai-did")
+        if not did:
+            print("[Warn] 初始请求未获取到 oai-did")
+            did = str(uuid.uuid4())
         print(f"[*] Device ID: {did}")
+        
+        sv = get_sentinel_version(s)
+        print(f"[*] 自动获取 Sentinel 版本: {sv}")
 
         signup_body = f'{{"username":{{"value":"{email}","kind":"email"}},"screen_hint":"signup"}}'
         sen_req_body = f'{{"p":"","id":"{did}","flow":"authorize_continue"}}'
 
-        sen_resp = requests.post(
+        sen_resp = s.post(
             "https://sentinel.openai.com/backend-api/sentinel/req",
             headers={
                 "origin": "https://sentinel.openai.com",
-                "referer": "https://sentinel.openai.com/backend-api/sentinel/frame.html?sv=20260219f9f6",
+                "referer": f"https://sentinel.openai.com/backend-api/sentinel/frame.html?sv={sv}",
                 "content-type": "text/plain;charset=UTF-8",
             },
             data=sen_req_body,
-            proxies=proxies,
-            impersonate="chrome",
             timeout=15,
         )
 
         if sen_resp.status_code != 200:
             print(f"[Error] Sentinel 异常拦截，状态码: {sen_resp.status_code}")
+            print(f"[*] 响应内容: {sen_resp.text}")
+            if "turnstile" in sen_resp.text.lower() or "pow" in sen_resp.text.lower():
+                print("[!] 此 IP 被要求进行 Turnstile 或 PoW 验证，极高风险。")
             return None
 
-        sen_token = sen_resp.json()["token"]
+        sen_token = sen_resp.json().get("token")
+        if not sen_token:
+            print("[Error] Sentinel 请求未返回 token。")
+            return None
+
         sentinel = f'{{"p": "", "t": "", "c": "{sen_token}", "id": "{did}", "flow": "authorize_continue"}}'
 
         signup_resp = s.post(
@@ -516,7 +561,7 @@ def run(proxy: Optional[str]) -> Optional[str]:
         )
         print(f"[*] 验证码校验状态: {code_resp.status_code}")
 
-        create_account_body = '{"name":"Neo","birthdate":"2000-02-20"}'
+        create_account_body = get_random_account_info()
         create_account_resp = s.post(
             "https://auth.openai.com/api/accounts/create_account",
             headers={
