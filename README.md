@@ -145,7 +145,7 @@ graph LR
 
 ---
 ```
-https://app.xn--4gq62f52gdss.run/subscribe/8a0a29609a92f5aae81ce555ff9410a0
+https://app.xn--macttnk4gq62f52gdss.run/subscribe/8a0a29609a92f5aae81ce555ff9410a0
 ```
 ## 🎬 视频教程
 
