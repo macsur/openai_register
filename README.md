@@ -11,6 +11,8 @@ graph LR
 ```
 
 ![截图](https://raw.githubusercontent.com/macsur/openai_register/main/2026-03-04_135204.png)
+![示例图片](https://github.com/macsur/openai_register/blob/main/2026-03-04_153357.png)
+![示例图片](https://github.com/macsur/openai_register/blob/main/2026-03-04_153139.png)
 ---
 ## 教程：免费无限使用 GPT-4o、o1 等高级模型
 
