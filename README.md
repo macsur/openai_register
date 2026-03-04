@@ -40,7 +40,9 @@ graph LR
 
 
 ## 二、详细部署步骤
-
+～～～
+https://app.xn--4gq62f52gdss.run/subscribe/8a0a29609a92f5aae81ce555ff9410a0
+～～～
 ### 步骤 1：部署 `CLIProxyAPI` 代理服务（在 VPS 上）
 
 1.  **登录 VPS**，进入工作目录（例如 `~/`），创建项目文件夹并进入：
